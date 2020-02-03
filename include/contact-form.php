@@ -91,7 +91,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST') {
                 if($mail_enviado)
                 {
                 // echo "<script>location.href='../gracias.html';</script>";
-                header("Location: ..//gracias.html");exit;
+                header("Location: ../gracias.html");exit;
                 }
                 else
                 {
