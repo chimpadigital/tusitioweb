@@ -95,7 +95,7 @@ var INSPIRO = {},
 
     INSPIRO.core = {
         functions: function () {
-            INSPIRO.core.pageLoader();
+            // INSPIRO.core.pageLoader();
             INSPIRO.core.responsiveClasses();
             INSPIRO.core.goToTop();
             INSPIRO.core.screenSizeControl();
@@ -201,131 +201,131 @@ var INSPIRO = {},
                 });
             }
         },
-        pageLoader: function () {
-            if (!$().animsition) {
-                console.log('pageLoader: animsition plugin is missing.');
-                return true;
-            }
+        // pageLoader: function () {
+        //     if (!$().animsition) {
+        //         console.log('pageLoader: animsition plugin is missing.');
+        //         return true;
+        //     }
 
-            if (!$body.hasClass('no-page-loader')) {
-                var pageInAnimation = $body.attr('data-animation-in') || "fadeIn",
-                    pageOutAnimation = $body.attr('data-animation-out') || "fadeOut",
-                    pageLoaderIcon = $body.attr('data-icon') || 10,
-                    pageLoaderIconColor = $body.attr('data-icon-color') || null,
-                    pageInDuration = $body.attr('data-speed-in') || 1500,
-                    pageOutDuration = $body.attr('data-speed-out') || 800,
-                    iconColor = "",
-                    loadingInnerHTML = "";
+        //     if (!$body.hasClass('no-page-loader')) {
+        //         var pageInAnimation = $body.attr('data-animation-in') || "fadeIn",
+        //             pageOutAnimation = $body.attr('data-animation-out') || "fadeOut",
+        //             pageLoaderIcon = $body.attr('data-icon') || 10,
+        //             pageLoaderIconColor = $body.attr('data-icon-color') || null,
+        //             pageInDuration = $body.attr('data-speed-in') || 1500,
+        //             pageOutDuration = $body.attr('data-speed-out') || 800,
+        //             iconColor = "",
+        //             loadingInnerHTML = "";
 
-                switch (Number(pageLoaderIcon)) {
-                    case 1:
-                        loadingInnerHTML = '<div class="material-icon"><div class="spinner"><div class="right-side"><div class="bar"></div></div><div class="left-side"><div class="bar"></div></div></div></div>';
-                        iconColor = '.spinner .bar {border-color: ' + pageLoaderIconColor + ';} .spinner .bar:after {background: ' + pageLoaderIconColor + ';}';
-                        break;
-                    case 2:
-                        loadingInnerHTML = '<div class="loader-inner ball-grid-pulse"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
-                        iconColor = '.ball-grid-pulse > div {background: ' + pageLoaderIconColor + '!important;}';
-                        break;
-                    case 3:
-                        loadingInnerHTML = '<div class="loader01"></div>';
-                        iconColor = '.loader01 {border-color: ' + pageLoaderIconColor + ' transparent ' + pageLoaderIconColor + ' ' + pageLoaderIconColor + ';} .loader01::after {background: ' + pageLoaderIconColor + ';}';
-                        break;
-                    case 4:
-                        loadingInnerHTML = '<div class="loader-inner square-spin"><div></div></div>';
-                        iconColor = '.square-spin > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 5:
-                        loadingInnerHTML = '<div class="loader04"></div>';
-                        iconColor = '.loader04:after {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 6:
-                        loadingInnerHTML = '<div class="loader-inner ball-rotate"><div></div></div>';
-                        iconColor = '.ball-rotate > div, .ball-rotate > div:after, .ball-rotate > div:before {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 7:
-                        loadingInnerHTML = '<div class="loader-inner cube-transition"><div></div><div></div></div>';
-                        iconColor = '.cube-transition > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 8:
-                        loadingInnerHTML = '<div class="loader-inner ball-zig-zag"><div></div><div></div></div>';
-                        iconColor = '.ball-zig-zag > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 9:
-                        loadingInnerHTML = '<div class="loader-inner ball-triangle-path"><div></div><div></div><div></div></div>';
-                        iconColor = '.ball-triangle-path > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 10:
-                        loadingInnerHTML = '<div class="loader-inner line-scale"><div></div><div></div><div></div><div></div><div></div></div>';
-                        iconColor = '.line-scale > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 11:
-                        loadingInnerHTML = '<div class="loader-inner ball-scale-multiple"><div></div><div></div><div></div></div>';
-                        iconColor = '.ball-scale-multiple > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 12:
-                        loadingInnerHTML = '<div class="loader-inner ball-pulse-sync"><div></div><div></div><div></div></div>';
-                        iconColor = '.ball-pulse-sync > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 13:
-                        loadingInnerHTML = '<div class="loader-inner ball-beat"><div></div><div></div><div></div></div>';
-                        iconColor = '.ball-beat > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 14:
-                        loadingInnerHTML = '<div class="loader-inner line-scale-pulse-out-rapid"><div></div><div></div><div></div><div></div><div></div></div>';
-                        iconColor = '.line-scale-pulse-out-rapid > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 15:
-                        loadingInnerHTML = '<div class="loader-inner ball-scale-ripple-multiple"><div></div><div></div><div></div></div>';
-                        iconColor = '.ball-scale-ripple-multiple > div {border-color: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 16:
-                        loadingInnerHTML = '<div class="loader-inner ball-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
-                        iconColor = '.ball-spin-fade-loader > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 17:
-                        loadingInnerHTML = '<div class="loader-inner line-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
-                        iconColor = '.line-spin-fade-loader > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 18:
-                        loadingInnerHTML = '<div class="loader-inner pacman"><div></div><div></div><div></div><div></div><div></div></div>';
-                        iconColor = '.pacman > div:nth-child(3), .pacman > div:nth-child(4), .pacman > div:nth-child(5), .pacman > div:nth-child(6)  {background: ' + pageLoaderIconColor + ' !important;} .pacman > div:first-of-type, .pacman > div:nth-child(2) {border-color: ' + pageLoaderIconColor + ' transparent ' + pageLoaderIconColor + ' ' + pageLoaderIconColor + '}';
-                        break;
-                    case 19:
-                        loadingInnerHTML = '<div class="loader-inner ball-grid-beat"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
-                        iconColor = '.ball-grid-beat > div {background: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    case 20:
-                        loadingInnerHTML = '<div class="single9"></div>';
-                        iconColor = '.single9:before {background-color: ' + pageLoaderIconColor + ' !important;}';
-                        break;
-                    default:
-                        loadingInnerHTML = '<div class="material-icon"><div class="spinner"><div class="right-side"><div class="bar"></div></div><div class="left-side"><div class="bar"></div></div></div></div>';
-                        iconColor = '.spinner .bar {border-color: ' + pageLoaderIconColor + ';} .spinner .bar:after {background: ' + pageLoaderIconColor + ';}';
-                        break;
-                }
-                if (pageLoaderIconColor) {
-                    $('head').append('<style type="text/css">' + iconColor + '</style>');
-                }
-                $('#wrapper').animsition({
-                    inClass: pageInAnimation,
-                    outClass: pageOutAnimation,
-                    inDuration: pageInDuration,
-                    outDuration: pageOutDuration,
-                    loading: true,
-                    loadingParentElement: 'body', //animsition wrapper element
-                    loadingClass: 'animsition-loading',
-                    loadingInner: '<div class="loader">' + loadingInnerHTML + '</div>',
-                    linkElement: '#mainMenu a:not([target="_blank"]):not([href^=#]), .animsition-link'
-                });
-                setTimeout(function () {
-                    if ($(".animsition-loading").length) {
-                        $body.addClass("no-page-loader");
-                        $(".animsition-loading").hide();
-                    }
-                }, 10000);
-            }
+        //         switch (Number(pageLoaderIcon)) {
+        //             case 1:
+        //                 loadingInnerHTML = '<div class="material-icon"><div class="spinner"><div class="right-side"><div class="bar"></div></div><div class="left-side"><div class="bar"></div></div></div></div>';
+        //                 iconColor = '.spinner .bar {border-color: ' + pageLoaderIconColor + ';} .spinner .bar:after {background: ' + pageLoaderIconColor + ';}';
+        //                 break;
+        //             case 2:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-grid-pulse"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+        //                 iconColor = '.ball-grid-pulse > div {background: ' + pageLoaderIconColor + '!important;}';
+        //                 break;
+        //             case 3:
+        //                 loadingInnerHTML = '<div class="loader01"></div>';
+        //                 iconColor = '.loader01 {border-color: ' + pageLoaderIconColor + ' transparent ' + pageLoaderIconColor + ' ' + pageLoaderIconColor + ';} .loader01::after {background: ' + pageLoaderIconColor + ';}';
+        //                 break;
+        //             case 4:
+        //                 loadingInnerHTML = '<div class="loader-inner square-spin"><div></div></div>';
+        //                 iconColor = '.square-spin > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 5:
+        //                 loadingInnerHTML = '<div class="loader04"></div>';
+        //                 iconColor = '.loader04:after {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 6:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-rotate"><div></div></div>';
+        //                 iconColor = '.ball-rotate > div, .ball-rotate > div:after, .ball-rotate > div:before {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 7:
+        //                 loadingInnerHTML = '<div class="loader-inner cube-transition"><div></div><div></div></div>';
+        //                 iconColor = '.cube-transition > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 8:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-zig-zag"><div></div><div></div></div>';
+        //                 iconColor = '.ball-zig-zag > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 9:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-triangle-path"><div></div><div></div><div></div></div>';
+        //                 iconColor = '.ball-triangle-path > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 10:
+        //                 loadingInnerHTML = '<div class="loader-inner line-scale"><div></div><div></div><div></div><div></div><div></div></div>';
+        //                 iconColor = '.line-scale > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 11:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-scale-multiple"><div></div><div></div><div></div></div>';
+        //                 iconColor = '.ball-scale-multiple > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 12:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-pulse-sync"><div></div><div></div><div></div></div>';
+        //                 iconColor = '.ball-pulse-sync > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 13:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-beat"><div></div><div></div><div></div></div>';
+        //                 iconColor = '.ball-beat > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 14:
+        //                 loadingInnerHTML = '<div class="loader-inner line-scale-pulse-out-rapid"><div></div><div></div><div></div><div></div><div></div></div>';
+        //                 iconColor = '.line-scale-pulse-out-rapid > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 15:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-scale-ripple-multiple"><div></div><div></div><div></div></div>';
+        //                 iconColor = '.ball-scale-ripple-multiple > div {border-color: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 16:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+        //                 iconColor = '.ball-spin-fade-loader > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 17:
+        //                 loadingInnerHTML = '<div class="loader-inner line-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+        //                 iconColor = '.line-spin-fade-loader > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 18:
+        //                 loadingInnerHTML = '<div class="loader-inner pacman"><div></div><div></div><div></div><div></div><div></div></div>';
+        //                 iconColor = '.pacman > div:nth-child(3), .pacman > div:nth-child(4), .pacman > div:nth-child(5), .pacman > div:nth-child(6)  {background: ' + pageLoaderIconColor + ' !important;} .pacman > div:first-of-type, .pacman > div:nth-child(2) {border-color: ' + pageLoaderIconColor + ' transparent ' + pageLoaderIconColor + ' ' + pageLoaderIconColor + '}';
+        //                 break;
+        //             case 19:
+        //                 loadingInnerHTML = '<div class="loader-inner ball-grid-beat"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+        //                 iconColor = '.ball-grid-beat > div {background: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             case 20:
+        //                 loadingInnerHTML = '<div class="single9"></div>';
+        //                 iconColor = '.single9:before {background-color: ' + pageLoaderIconColor + ' !important;}';
+        //                 break;
+        //             default:
+        //                 loadingInnerHTML = '<div class="material-icon"><div class="spinner"><div class="right-side"><div class="bar"></div></div><div class="left-side"><div class="bar"></div></div></div></div>';
+        //                 iconColor = '.spinner .bar {border-color: ' + pageLoaderIconColor + ';} .spinner .bar:after {background: ' + pageLoaderIconColor + ';}';
+        //                 break;
+        //         }
+        //         if (pageLoaderIconColor) {
+        //             $('head').append('<style type="text/css">' + iconColor + '</style>');
+        //         }
+        //         $('#wrapper').animsition({
+        //             inClass: pageInAnimation,
+        //             outClass: pageOutAnimation,
+        //             inDuration: pageInDuration,
+        //             outDuration: pageOutDuration,
+        //             loading: true,
+        //             loadingParentElement: 'body', //animsition wrapper element
+        //             loadingClass: 'animsition-loading',
+        //             loadingInner: '<div class="loader">' + loadingInnerHTML + '</div>',
+        //             linkElement: '#mainMenu a:not([target="_blank"]):not([href^=#]), .animsition-link'
+        //         });
+        //         setTimeout(function () {
+        //             if ($(".animsition-loading").length) {
+        //                 $body.addClass("no-page-loader");
+        //                 $(".animsition-loading").hide();
+        //             }
+        //         }, 10000);
+        //     }
 
-        },
+        // },
         screenSizeControl: function () {
             if ($fullScreen.length > 0) {
                 $fullScreen.each(function () {
@@ -2142,7 +2142,7 @@ var INSPIRO = {},
     //Document ready functions
     INSPIRO.documentReady = {
         functions: function () {
-            INSPIRO.core.pageLoader();
+            // INSPIRO.core.pageLoader();
             INSPIRO.slider.sliderScreenSizeControl();
             INSPIRO.core.functions();
             INSPIRO.header.functions();
