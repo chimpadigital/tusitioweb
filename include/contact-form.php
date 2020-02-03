@@ -74,22 +74,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $mail->Body = $name . $email . $phone . $company . $message . '<br><br><br>Mensaje enviado de: ' . $_SERVER['HTTP_REFERER'];
      
-     
-            if(isset($recaptcha) && $recaptcha == '') {
-             $recaptcha_response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR']), true);
-                        if($recaptcha_response['success'] == false)
-                        {
-                            $response = array ('response'=>'error', 'message'=> "Captcha inválido! pruebe de nuevo.");
-                        }
-
-			}else {
-                if(!$mail->Send()) {
-                   $response = array ('response'=>'error', 'message'=> $mail->ErrorInfo);  
-
-                }else {
-                   $response = array ('response'=>'success');  
-                }
-            }        
+            
      echo json_encode($response);
 
 } else {
