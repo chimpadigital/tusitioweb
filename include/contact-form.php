@@ -21,7 +21,8 @@ $company = isset($_POST["widget-contact-form-company"]) ? $_POST["widget-contact
 $subject = isset($_POST["widget-contact-form-subject"]) ? $_POST["widget-contact-form-subject"] : 'Formulario madrid';
 $message = isset($_POST["widget-contact-form-message"]) ? $_POST["widget-contact-form-message"] : null;
 
-$recaptcha = $_POST['g-recaptcha-response'];
+// $recaptcha = $_POST['g-recaptcha-response'];
+
 //inicio script grabar datos en csv
 $fichero = 'madrid.csv';//nombre archivo ya creado
 //crear linea de datos separado por coma
