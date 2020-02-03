@@ -9,7 +9,7 @@ require_once('php-mailer/PHPMailerAutoload.php');
 $mail = new PHPMailer();
 
 // Enter your email address. If you need multiple email recipes simply add a comma: email@domain.com, email2@domain.com
-$to = "sdesigncba@gmail.com";
+$to = "sprados@chimpancedigital.com.ar";
 
 
 // Form Fields
@@ -21,7 +21,7 @@ $company = isset($_POST["widget-contact-form-company"]) ? $_POST["widget-contact
 $subject = isset($_POST["widget-contact-form-subject"]) ? $_POST["widget-contact-form-subject"] : 'Formulario madrid';
 $message = isset($_POST["widget-contact-form-message"]) ? $_POST["widget-contact-form-message"] : null;
 
-// $recaptcha = $_POST['g-recaptcha-response'];
+$recaptcha = $_POST['g-recaptcha-response'];
 
 //inicio script grabar datos en csv
 $fichero = 'madrid.csv';//nombre archivo ya creado
@@ -35,7 +35,6 @@ file_put_contents($fichero, $linea, FILE_APPEND | LOCK_EX);
 if( $_SERVER['REQUEST_METHOD'] == 'POST') {
 	
     
- if($email != '') {
             
                 //If you don't receive the email, enable and configure these parameters below: 
      
@@ -73,14 +72,33 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST') {
                 $message = isset($message) ? "Message: $message<br><br>" : '';
 
                 $mail->Body = $name . $email . $phone . $company . $message . '<br><br><br>Mensaje enviado de: ' . $_SERVER['HTTP_REFERER'];
+                
+                if (!$mail->send()) {
+                    $mail_enviado=false;
+                    $mail_error .= 'Mailer Error: '.$mail->ErrorInfo;
+                } else {
+                    $mail_enviado=true;
+                    $mail_error='Mensaje Enviado, Gracias';
+                }
+                // Ahora se envía el e-mail usando la función mail() de PHP
+                //$headers = 'From: Ralseff <info@ralseff.com>' . "\r\n" .
+                //    'Reply-To: noreply@ralseff.com' . "\r\n" .
+                //    'Cc: ralseff@chimpancedigital.com.ar' . "\r\n" .
+                //    'X-Mailer: PHP/' . phpversion();
+                //$mail_enviado = @mail($email_to, utf8_decode($email_subject), utf8_decode($email_message), $headers);
+                
+                
+                if($mail_enviado)
+                {
+                echo "<script>location.href='/gracias.html';</script>";
+                
+                }
+                else
+                {
+                    echo "no se pudo enviar" ;
+                }
      
             
-     echo json_encode($response);
-
-} else {
-	$response = array ('response'=>'error');     
-	echo json_encode($response);
-}
     
 }
 ?>
