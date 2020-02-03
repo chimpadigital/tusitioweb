@@ -113,7 +113,7 @@ body {
   line-height: 1.65714286em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
   color: #565656;
   font-weight: 400; }
 
@@ -225,7 +225,7 @@ h6,
     font-size: 1.35714286em;
     line-height: 1.68421053em; } }
 p {
-  font-family: "Open Sans";
+  font-family: "Montserrat";
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
