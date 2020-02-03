@@ -2008,7 +2008,7 @@ var INSPIRO = {},
 
                 $contactForm.each(function () {
                     var elem = $(this),
-                        elemSuccessMessage = elem.attr('data-success-message') || "<meta http-equiv=\"refresh\" content=\"0;URL='/gracias.html'\" />";
+                        elemSuccessMessage = elem.attr('data-success-message') || "<meta http-equiv=\"refresh\" content=\"0;URL='/campanamadrid/gracias.html'\" />";
 
                     elem.validate({
                         submitHandler: function (form) {
