@@ -80,7 +80,7 @@ var INSPIRO = {},
         $flickr_widget = $('.flickr-widget'),
         $ytPlayer = $('.youtube-background'),
         $pinOnScroll = $('.pinOnScroll'),
-        $contactForm = $(".widget-contact-form"),
+        // $contactForm = $(".widget-contact-form"),
         $subscribeForm = $(".widget-subscribe-form"),
         $goToTop = $('#goToTop'),
 
