@@ -39,7 +39,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST') {
                 //If you don't receive the email, enable and configure these parameters below: 
      
                 $mail->isSMTP();
-                $mail->SMTPDebug = 0;
+                $mail->SMTPDebug = 2;
                 $mail->Debugoutput = "html";
                 $mail->Host = "smtp.gmail.com";
                 $mail->Port = 587;
