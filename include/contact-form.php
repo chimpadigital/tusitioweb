@@ -18,7 +18,7 @@ $email = $_POST["widget-contact-form-email"];
 $phone = isset($_POST["widget-contact-form-phone"]) ? $_POST["widget-contact-form-phone"] : null;
 $company = isset($_POST["widget-contact-form-company"]) ? $_POST["widget-contact-form-company"] : null;
 // $service = isset($_POST["widget-contact-form-service"]) ? $_POST["widget-contact-form-service"] : null;
-$subject = isset($_POST["widget-contact-form-subject"]) ? $_POST["widget-contact-form-subject"] : 'Consulta landing madrid';
+$subject = isset($_POST["widget-contact-form-subject"]) ? $_POST["widget-contact-form-subject"] : 'Consulta landing tupaginaweb';
 $message = isset($_POST["widget-contact-form-message"]) ? $_POST["widget-contact-form-message"] : null;
 
 // $recaptcha = $_POST['g-recaptcha-response'];
