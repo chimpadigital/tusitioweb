@@ -961,7 +961,7 @@
                     <div class="col-md-12">
                         <div class="form" data-animation="fadeInUp" >
                             <h3 class="text-light text-center">CONTACTENOS</h3>
-                            <form class="widget-contact-form" id="contactForm" action="include/contact-form.php" role="form" method="post">
+                            <form class="widget-contact-form" id="contactForm" action="include/contact-form.php" role="form" method="post" onsubmit="return checkForm(this);">
                                     <div class="row">
                                         <div class="form-group col-sm-3">
                                             <label for="name">Nombre y apellido</label>
@@ -988,7 +988,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group text-center">
-                                            <button class="btn btn-default center" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;ENVIAR</button>
+                                            <button class="btn btn-default center" name="myButton" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;ENVIAR</button>
                                         </div>
                                     </div>
                                 </form>
@@ -1024,7 +1024,16 @@
     <script src="js/functions.js"></script>
     <script src="js/custom.js"></script>
 
- 
+    <script type="text/javascript">
+        function checkForm(form)
+        {
+            //
+            // validate form fields
+            //
+            form.myButton.disabled = true;
+            return true;
+        }
+    </script>
 
 </body>
 
