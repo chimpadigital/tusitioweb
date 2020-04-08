@@ -24,7 +24,7 @@ $message = isset($_POST["widget-contact-form-message"]) ? $_POST["widget-contact
 // $recaptcha = $_POST['g-recaptcha-response'];
 
 //inicio script grabar datos en csv
-$fichero = 'madrid.csv';//nombre archivo ya creado
+$fichero = 'tupaginaweb.csv';//nombre archivo ya creado
 //crear linea de datos separado por coma
 $fecha=date("Y-m-d H:i:s");
 $linea = $fecha.";".$name.";".$company.";".$phone.";".$email.";".$message."\n";
