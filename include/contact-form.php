@@ -18,13 +18,13 @@ $email = $_POST["widget-contact-form-email"];
 $phone = isset($_POST["widget-contact-form-phone"]) ? $_POST["widget-contact-form-phone"] : null;
 $company = isset($_POST["widget-contact-form-company"]) ? $_POST["widget-contact-form-company"] : null;
 // $service = isset($_POST["widget-contact-form-service"]) ? $_POST["widget-contact-form-service"] : null;
-$subject = isset($_POST["widget-contact-form-subject"]) ? $_POST["widget-contact-form-subject"] : 'Consulta landing tupaginaweb';
+$subject = isset($_POST["widget-contact-form-subject"]) ? $_POST["widget-contact-form-subject"] : 'Consulta landing tusitioweb';
 $message = isset($_POST["widget-contact-form-message"]) ? $_POST["widget-contact-form-message"] : null;
 
 // $recaptcha = $_POST['g-recaptcha-response'];
 
 //inicio script grabar datos en csv
-$fichero = 'tupaginaweb.csv';//nombre archivo ya creado
+$fichero = 'tusitioweb.csv';//nombre archivo ya creado
 //crear linea de datos separado por coma
 $fecha=date("Y-m-d H:i:s");
 $linea = $fecha.";".$name.";".$company.";".$phone.";".$email.";".$message."\n";
