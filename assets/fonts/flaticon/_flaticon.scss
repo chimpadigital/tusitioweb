@@ -1,0 +1,108 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/02/2019 09:59
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-right-chevron:before { content: "\f100"; }
+.flaticon-left-chevron:before { content: "\f101"; }
+.flaticon-heart:before { content: "\f102"; }
+.flaticon-stopwatch:before { content: "\f103"; }
+.flaticon-internet:before { content: "\f104"; }
+.flaticon-id-card:before { content: "\f105"; }
+.flaticon-back:before { content: "\f106"; }
+.flaticon-next:before { content: "\f107"; }
+.flaticon-download:before { content: "\f108"; }
+.flaticon-search:before { content: "\f109"; }
+.flaticon-eyeglasses:before { content: "\f10a"; }
+.flaticon-add:before { content: "\f10b"; }
+.flaticon-network:before { content: "\f10c"; }
+.flaticon-diamond:before { content: "\f10d"; }
+.flaticon-play-button:before { content: "\f10e"; }
+.flaticon-multimedia:before { content: "\f10f"; }
+.flaticon-smartphone:before { content: "\f110"; }
+.flaticon-idea:before { content: "\f111"; }
+.flaticon-house:before { content: "\f112"; }
+.flaticon-smartphone-1:before { content: "\f113"; }
+.flaticon-paper-plane:before { content: "\f114"; }
+.flaticon-like:before { content: "\f115"; }
+.flaticon-user:before { content: "\f116"; }
+.flaticon-placeholder:before { content: "\f117"; }
+.flaticon-battery:before { content: "\f118"; }
+.flaticon-double-angle-pointing-to-right:before { content: "\f119"; }
+.flaticon-fast-forward-double-right-arrows:before { content: "\f11a"; }
+.flaticon-layers:before { content: "\f11b"; }
+.flaticon-fingerprint:before { content: "\f11c"; }
+.flaticon-worldwide:before { content: "\f11d"; }
+.flaticon-diploma:before { content: "\f11e"; }
+.flaticon-help:before { content: "\f11f"; }
+.flaticon-add-plus-button:before { content: "\f120"; }
+.flaticon-minus:before { content: "\f121"; }
+    
+    $font-Flaticon-right-chevron: "\f100";
+    $font-Flaticon-left-chevron: "\f101";
+    $font-Flaticon-heart: "\f102";
+    $font-Flaticon-stopwatch: "\f103";
+    $font-Flaticon-internet: "\f104";
+    $font-Flaticon-id-card: "\f105";
+    $font-Flaticon-back: "\f106";
+    $font-Flaticon-next: "\f107";
+    $font-Flaticon-download: "\f108";
+    $font-Flaticon-search: "\f109";
+    $font-Flaticon-eyeglasses: "\f10a";
+    $font-Flaticon-add: "\f10b";
+    $font-Flaticon-network: "\f10c";
+    $font-Flaticon-diamond: "\f10d";
+    $font-Flaticon-play-button: "\f10e";
+    $font-Flaticon-multimedia: "\f10f";
+    $font-Flaticon-smartphone: "\f110";
+    $font-Flaticon-idea: "\f111";
+    $font-Flaticon-house: "\f112";
+    $font-Flaticon-smartphone-1: "\f113";
+    $font-Flaticon-paper-plane: "\f114";
+    $font-Flaticon-like: "\f115";
+    $font-Flaticon-user: "\f116";
+    $font-Flaticon-placeholder: "\f117";
+    $font-Flaticon-battery: "\f118";
+    $font-Flaticon-double-angle-pointing-to-right: "\f119";
+    $font-Flaticon-fast-forward-double-right-arrows: "\f11a";
+    $font-Flaticon-layers: "\f11b";
+    $font-Flaticon-fingerprint: "\f11c";
+    $font-Flaticon-worldwide: "\f11d";
+    $font-Flaticon-diploma: "\f11e";
+    $font-Flaticon-help: "\f11f";
+    $font-Flaticon-add-plus-button: "\f120";
+    $font-Flaticon-minus: "\f121";
